@@ -77,7 +77,7 @@ Open your browser and navigate to `http://localhost:5173` to view the live previ
 
 ## 📸 Platform Sneak Peek
 
-| Hero Section & Glitch Text | Interactive Bento Grid |
+| Dynamic Landing Page | Interactive Bento Grid |
 | :---: | :---: |
 | *Dynamic gradient text with custom animated cursors.* | *Hover-responsive glass panels with colored drop shadows.* |
 
