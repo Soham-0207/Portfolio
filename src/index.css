@@ -245,12 +245,8 @@ a {
 .delay-300 { transition-delay: 300ms; }
 
 /* Custom Cursor */
-body {
-  cursor: none; /* Hide default cursor */
-}
-
-a, button, .skill-tag {
-  cursor: none; /* Ensure custom cursor is used everywhere */
+* {
+  cursor: none !important; /* Hide default cursor everywhere */
 }
 
 .comet-dot {
