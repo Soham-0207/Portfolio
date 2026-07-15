@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camera } from 'lucide-react';
 import { motion } from 'framer-motion';
 import CustomCursor from './CustomCursor';
+import heroImg from './assets/hero.png';
 import './App.css';
 
 function App() {
@@ -69,69 +70,99 @@ function App() {
       <section className="hero">
         <div className="hero-bg"></div>
         <div className="hero-content">
-          <motion.div 
-            className="hero-subtitle mono"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
-          >
-            <Terminal size={16} /> console.log("Hello, World!");
-          </motion.div>
-          
-          <motion.h1 
-            className="hero-title"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-          >
-            I'm <span className="glitch-effect" data-text="Soham Vora">Soham Vora</span>
-          </motion.h1>
-          
-          <motion.div 
-            className="hero-roles"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-          >
-            <div className="mono" style={{ color: 'var(--accent-cyan)' }}>
-              <span className="glow-cyan">{typedText}</span>
-              <span style={{ animation: 'blink 1s step-end infinite', borderRight: '2px solid var(--accent-cyan)' }}></span>
-            </div>
-            <div className="role-separator"></div>
-            <div style={{ color: 'var(--accent-purple)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <motion.div
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          <div className="hero-text-side">
+            <motion.div 
+              className="hero-subtitle mono"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+            >
+              <Terminal size={16} /> console.log("Hello, World!");
+            </motion.div>
+            
+            <motion.h1 
+              className="hero-title"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+            >
+              I'm <span className="glitch-effect" data-text="Soham Vora">Soham Vora</span>
+            </motion.h1>
+            
+            <motion.div 
+              className="hero-roles"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+            >
+              <div className="mono" style={{ color: 'var(--accent-cyan)' }}>
+                <span className="glow-cyan">{typedText}</span>
+                <span style={{ animation: 'blink 1s step-end infinite', borderRight: '2px solid var(--accent-cyan)' }}></span>
+              </div>
+              <div className="role-separator"></div>
+              <div style={{ color: 'var(--accent-purple)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <motion.div
+                  animate={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                >
+                  <Film size={20} className="glow-purple" />
+                </motion.div>
+                Video & Photo Editor
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              className="hero-cta"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5, duration: 0.5 }}
+            >
+              <motion.a 
+                href="#projects" 
+                className="btn btn-primary"
+                whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(0, 240, 255, 0.6)" }}
+                whileTap={{ scale: 0.95 }}
               >
-                <Film size={20} className="glow-purple" />
+                View Projects
+              </motion.a>
+              <motion.a 
+                href="#contact" 
+                className="btn btn-secondary"
+                whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(189, 0, 255, 0.6)" }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Contact Me
+              </motion.a>
+            </motion.div>
+          </div>
+
+          <motion.div 
+            className="hero-image-side"
+            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 1, type: "spring", stiffness: 80, delay: 0.2 }}
+          >
+            <div className="hero-image-wrapper">
+              <img src={heroImg} alt="Soham Vora" className="hero-img" />
+              
+              <motion.div 
+                className="floating-icon icon-cyan"
+                animate={{ y: [0, -15, 0], rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Code2 size={24} />
               </motion.div>
-              Video & Photo Editor
+              
+              <motion.div 
+                className="floating-icon icon-purple"
+                animate={{ y: [0, 15, 0], rotate: [0, -10, 10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              >
+                <Film size={24} />
+              </motion.div>
             </div>
           </motion.div>
-          
-          <motion.div 
-            className="hero-cta"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 0.5 }}
-          >
-            <motion.a 
-              href="#projects" 
-              className="btn btn-primary"
-              whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(0, 240, 255, 0.6)" }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View Projects
-            </motion.a>
-            <motion.a 
-              href="#contact" 
-              className="btn btn-secondary"
-              whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(189, 0, 255, 0.6)" }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Contact Me
-            </motion.a>
-          </motion.div>
+
         </div>
       </section>
 

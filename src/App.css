@@ -56,6 +56,86 @@
     radial-gradient(circle at 15% 50%, rgba(0, 240, 255, 0.08), transparent 25%),
     radial-gradient(circle at 85% 30%, rgba(189, 0, 255, 0.08), transparent 25%);
 }
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 100%;
+}
+
+.hero-text-side {
+  flex: 1;
+  max-width: 650px;
+}
+
+.hero-image-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  padding: 10px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.4), rgba(189, 0, 255, 0.4));
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.2), inset 0 0 20px rgba(189, 0, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  background: var(--bg-main);
+  z-index: 0;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 1;
+  border: 4px solid rgba(255, 255, 255, 0.05);
+}
+
+.floating-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 2;
+}
+
+.icon-cyan {
+  top: 10%;
+  left: -5%;
+  color: var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+
+.icon-purple {
+  bottom: 15%;
+  right: -5%;
+  color: var(--accent-purple);
+  box-shadow: 0 0 15px rgba(189, 0, 255, 0.2);
+}
 .hero-subtitle {
   font-size: 1rem;
   color: var(--accent-cyan);
@@ -240,9 +320,27 @@
 }
 
 /* Mobile Responsiveness */
+@media (max-width: 968px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  .hero-text-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-image-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-title { font-size: 3rem; }
-  .hero-roles { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .hero-roles { flex-direction: column; align-items: center; gap: 0.5rem; }
   .role-separator { display: none; }
   .skills-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
