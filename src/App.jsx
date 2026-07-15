@@ -141,23 +141,51 @@ function App() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={fadeInUp}
+        variants={staggerContainer}
       >
-        <h2 className="section-header">
+        <motion.h2 variants={fadeInUp} className="section-header">
           <Code2 size={32} /> About Me
-        </h2>
-        <motion.div 
-          className="glass-panel" 
-          style={{ padding: '2rem', fontSize: '1.1rem', maxWidth: '800px' }}
-          whileHover={{ y: -5, boxShadow: "0px 10px 30px rgba(0,0,0,0.5)", borderColor: "rgba(255,255,255,0.15)" }}
-        >
-          <p style={{ marginBottom: '1rem' }}>
-            I'm a B.Tech student with a dual passion: writing clean, efficient code and crafting compelling visual stories.
-          </p>
-          <p>
-            Whether I'm debugging a complex software architecture or color grading footage on a timeline, I bring the same level of precision and creativity to everything I do. I believe that engineering provides the logic, and editing provides the emotion—together, they create unforgettable digital experiences.
-          </p>
-        </motion.div>
+        </motion.h2>
+        
+        <div className="about-bento-grid">
+          <motion.div 
+            className="glass-panel bento-card bio-card"
+            variants={fadeInUp}
+            whileHover={{ y: -5, boxShadow: "0px 15px 35px rgba(0,0,0,0.4)" }}
+          >
+            <span className="highlight text-gradient">
+              Precision meets Creativity.
+            </span>
+            <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem', lineHeight: '1.8' }}>
+              I'm a B.Tech student with a dual passion: writing clean, efficient code and crafting compelling visual stories.
+            </p>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-muted)' }}>
+              I believe that engineering provides the logic, and editing provides the emotion—together, they create unforgettable digital experiences.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="glass-panel bento-card dev-card"
+            variants={fadeInUp}
+            whileHover={{ x: -5, boxShadow: "-10px 10px 30px rgba(0,240,255,0.1)", borderColor: "var(--accent-cyan)" }}
+          >
+            <h3><Terminal size={24} className="glow-cyan" /> Logic & Engineering</h3>
+            <p style={{ color: 'var(--text-muted)' }}>
+              Debugging complex software architecture and building scalable, responsive web applications that perform flawlessly under the hood.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="glass-panel bento-card edit-card"
+            variants={fadeInUp}
+            whileHover={{ x: -5, boxShadow: "-10px 10px 30px rgba(189,0,255,0.1)", borderColor: "var(--accent-purple)" }}
+          >
+            <h3><Film size={24} className="glow-purple" /> Emotion & Storytelling</h3>
+            <p style={{ color: 'var(--text-muted)' }}>
+              Color grading footage on a timeline and pacing edits to bring visual stories to life. Transforming raw clips into cinematic experiences.
+            </p>
+          </motion.div>
+        </div>
       </motion.section>
 
       <motion.section 

@@ -46,6 +46,70 @@ body {
   background: var(--text-muted);
 }
 
+/* Project Cards */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* About Bento Grid */
+.about-bento-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.bento-card {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bento-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.bio-card {
+  grid-row: span 2;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+}
+
+.bio-card .highlight {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.dev-card {
+  border-left: 4px solid var(--accent-cyan);
+}
+
+.edit-card {
+  border-left: 4px solid var(--accent-purple);
+}
+
+@media (max-width: 768px) {
+  .about-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bio-card {
+    grid-row: span 1;
+  }
+}
+
 /* Utilities */
 .glass-panel {
   background: var(--bg-panel);
