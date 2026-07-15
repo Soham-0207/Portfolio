@@ -245,7 +245,7 @@ a {
 .delay-300 { transition-delay: 300ms; }
 
 /* Custom Cursor */
-* {
+*, a, button, .btn, .nav-links a, .project-link, .skill-tag {
   cursor: none !important; /* Hide default cursor everywhere */
 }
 
