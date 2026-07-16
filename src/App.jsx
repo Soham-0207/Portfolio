@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camera } from 'lucide-react';
+import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camera, Linkedin, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 import CustomCursor from './CustomCursor';
 import heroImg from './assets/hero.jpeg';
@@ -413,15 +413,17 @@ function App() {
         <h2 style={{ fontSize: '2rem', marginBottom: '2rem', color: '#fff' }}>Let's Create Something Amazing</h2>
         <div className="social-links">
           {[
-            { id: 'Code2', href: 'https://github.com/Soham-0207' },
-            { id: 'Camera', href: '#' },
+            { id: 'Linkedin', href: 'https://www.linkedin.com/in/soham-vora-7209b732b' },
+            { id: 'Github', href: 'https://github.com/Soham-0207' },
             { id: 'Mail', href: 'mailto:sohamvora0207@gmail.com' }
           ].map((item, idx) => {
-            const Icon = item.id === 'Code2' ? Code2 : item.id === 'Camera' ? Camera : Mail;
+            const Icon = item.id === 'Linkedin' ? Linkedin : item.id === 'Github' ? Github : Mail;
             return (
               <motion.a 
                 key={idx} 
                 href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, y: -5, color: "var(--accent-cyan)", filter: "drop-shadow(0px 0px 8px rgba(0,240,255,0.8))" }}
                 whileTap={{ scale: 0.9 }}
               >
