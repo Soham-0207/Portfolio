@@ -419,12 +419,13 @@ function App() {
             { id: 'Mail', href: 'mailto:sohamvora0207@gmail.com' }
           ].map((item, idx) => {
             const Icon = item.id === 'Linkedin' ? LinkedinIcon : item.id === 'Github' ? GithubIcon : Mail;
+            const isMail = item.id === 'Mail';
             return (
               <motion.a 
                 key={idx} 
                 href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={isMail ? undefined : "_blank"}
+                rel={isMail ? undefined : "noopener noreferrer"}
                 whileHover={{ scale: 1.2, y: -5, color: "var(--accent-cyan)", filter: "drop-shadow(0px 0px 8px rgba(0,240,255,0.8))" }}
                 whileTap={{ scale: 0.9 }}
               >
