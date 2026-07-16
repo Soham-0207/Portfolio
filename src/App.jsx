@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camera, Linkedin, Github } from 'lucide-react';
+import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camera } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './Icons';
 import { motion } from 'framer-motion';
 import CustomCursor from './CustomCursor';
 import heroImg from './assets/hero.jpeg';
@@ -417,7 +418,7 @@ function App() {
             { id: 'Github', href: 'https://github.com/Soham-0207' },
             { id: 'Mail', href: 'mailto:sohamvora0207@gmail.com' }
           ].map((item, idx) => {
-            const Icon = item.id === 'Linkedin' ? Linkedin : item.id === 'Github' ? Github : Mail;
+            const Icon = item.id === 'Linkedin' ? LinkedinIcon : item.id === 'Github' ? GithubIcon : Mail;
             return (
               <motion.a 
                 key={idx} 
