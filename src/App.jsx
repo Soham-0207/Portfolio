@@ -145,13 +145,7 @@ function App() {
                 <Code2 size={24} />
               </motion.div>
               
-              <motion.div 
-                className="floating-icon icon-purple"
-                animate={{ y: [0, 15, 0], rotate: [0, -10, 10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              >
-                <Film size={24} />
-              </motion.div>
+
             </div>
           </motion.div>
 
@@ -180,10 +174,10 @@ function App() {
               Precision meets Creativity.
             </span>
             <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem', lineHeight: '1.8' }}>
-              I'm a B.Tech student with a dual passion: writing clean, efficient code and crafting compelling visual stories.
+              I'm a B.Tech student with a passion for writing clean, efficient code and building scalable software.
             </p>
             <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-muted)' }}>
-              I believe that engineering provides the logic, and editing provides the emotion—together, they create unforgettable digital experiences.
+              I believe that strong engineering principles and logical architecture are the foundation of unforgettable digital experiences.
             </p>
           </motion.div>
 
@@ -198,16 +192,7 @@ function App() {
             </p>
           </motion.div>
 
-          <motion.div 
-            className="glass-panel bento-card edit-card"
-            variants={fadeInUp}
-            whileHover={{ x: -5, boxShadow: "-10px 10px 30px rgba(189,0,255,0.1)", borderColor: "var(--accent-purple)" }}
-          >
-            <h3><Film size={24} className="glow-purple" /> Emotion & Storytelling</h3>
-            <p style={{ color: 'var(--text-muted)' }}>
-              Color grading footage on a timeline and pacing edits to bring visual stories to life. Transforming raw clips into cinematic experiences.
-            </p>
-          </motion.div>
+
         </div>
       </motion.section>
 
