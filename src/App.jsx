@@ -100,16 +100,7 @@ function App() {
                 <span className="glow-cyan">{typedText}</span>
                 <span style={{ animation: 'blink 1s step-end infinite', borderRight: '2px solid var(--accent-cyan)' }}></span>
               </div>
-              <div className="role-separator"></div>
-              <div style={{ color: 'var(--accent-purple)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <motion.div
-                  animate={{ rotate: [0, 10, -10, 0] }}
-                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                >
-                  <Film size={20} className="glow-purple" />
-                </motion.div>
-                Video & Photo Editor
-              </div>
+
             </motion.div>
             
             <motion.div 
@@ -259,58 +250,7 @@ function App() {
             </div>
           </motion.div>
 
-          <motion.div 
-            variants={fadeInUp}
-            className="glass-panel" 
-            style={{ padding: '2rem' }}
-            whileHover={{ scale: 1.02 }}
-          >
-            <h3 className="skill-category-title glow-purple" style={{ animation: 'float 6s ease-in-out infinite reverse' }}>
-              <Scissors size={24} /> Post-Production
-            </h3>
-            <div className="timeline-track">
-              <div style={{ paddingBottom: '1.5rem', position: 'relative' }}>
-                <div className="timeline-node" style={{ borderColor: 'var(--accent-purple)', animation: 'pulse-glow 2s infinite' }}></div>
-                <h4 style={{ marginBottom: '0.5rem' }}>Video Editing</h4>
-                <div className="skill-list">
-                  {['DaVinci Resolve', 'CapCut'].map(skill => (
-                    <motion.span 
-                      key={skill} 
-                      className="skill-tag edit"
-                      drag
-                      dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                      dragElastic={0.5}
-                      whileDrag={{ scale: 1.2, zIndex: 10, cursor: 'grabbing' }}
-                      whileHover={{ scale: 1.1, y: -5, borderColor: "var(--accent-purple)", boxShadow: "0px 5px 15px rgba(189,0,255,0.3)" }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {skill}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
-              <div style={{ position: 'relative' }}>
-                <div className="timeline-node" style={{ borderColor: 'var(--accent-purple)', animation: 'pulse-glow 2s infinite 1s' }}></div>
-                <h4 style={{ marginBottom: '0.5rem' }}>Photo Editing & Color</h4>
-                <div className="skill-list">
-                  {['Lightroom', 'Photoshop'].map(skill => (
-                    <motion.span 
-                      key={skill} 
-                      className="skill-tag edit"
-                      drag
-                      dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                      dragElastic={0.5}
-                      whileDrag={{ scale: 1.2, zIndex: 10, cursor: 'grabbing' }}
-                      whileHover={{ scale: 1.1, y: -5, borderColor: "var(--accent-purple)", boxShadow: "0px 5px 15px rgba(189,0,255,0.3)" }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {skill}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
+
         </div>
       </motion.section>
 
@@ -376,30 +316,7 @@ function App() {
             </div>
           </motion.div>
 
-          {/* Video Editing Project Placeholder */}
-          <motion.div 
-            variants={fadeInUp}
-            className="glass-panel project-card" 
-            style={{ borderTop: '4px solid var(--accent-purple)' }}
-            whileHover={{ y: -10, boxShadow: "0px 20px 30px rgba(0,0,0,0.5), 0px 0px 15px rgba(189,0,255,0.1)" }}
-          >
-            <div className="project-type edit mono">Video Production</div>
-            <h3 className="project-title">Cinematic Tech Reel</h3>
-            <p className="project-desc">
-              A fast-paced, highly stylized montage edited in DaVinci Resolve featuring speed ramping, motion graphics, and advanced color grading.
-            </p>
-            <div>
-              <motion.a 
-                href="#" 
-                className="project-link" 
-                style={{ color: 'var(--text-muted)' }}
-                whileHover={{ x: 5, color: "var(--accent-purple)" }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <MonitorPlay size={16} /> Coming Soon
-              </motion.a>
-            </div>
-          </motion.div>
+
         </div>
       </motion.section>
 
