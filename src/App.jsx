@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camera } from 'lucide-react';
 import { motion } from 'framer-motion';
 import CustomCursor from './CustomCursor';
-import heroImg from './assets/hero.png';
+import heroImg from './assets/hero.jpeg';
 import './App.css';
 
 function App() {
