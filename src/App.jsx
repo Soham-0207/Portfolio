@@ -412,12 +412,16 @@ function App() {
       >
         <h2 style={{ fontSize: '2rem', marginBottom: '2rem', color: '#fff' }}>Let's Create Something Amazing</h2>
         <div className="social-links">
-          {['Code2', 'Camera', 'Mail'].map((IconStr, idx) => {
-            const Icon = IconStr === 'Code2' ? Code2 : IconStr === 'Camera' ? Camera : Mail;
+          {[
+            { id: 'Code2', href: 'https://github.com/Soham-0207' },
+            { id: 'Camera', href: '#' },
+            { id: 'Mail', href: 'mailto:sohamvora0207@gmail.com' }
+          ].map((item, idx) => {
+            const Icon = item.id === 'Code2' ? Code2 : item.id === 'Camera' ? Camera : Mail;
             return (
               <motion.a 
                 key={idx} 
-                href="#"
+                href={item.href}
                 whileHover={{ scale: 1.2, y: -5, color: "var(--accent-cyan)", filter: "drop-shadow(0px 0px 8px rgba(0,240,255,0.8))" }}
                 whileTap={{ scale: 0.9 }}
               >
