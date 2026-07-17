@@ -310,33 +310,76 @@ function App() {
         className="footer"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.2 }}
         variants={fadeInUp}
       >
-        <h2 style={{ fontSize: '2rem', marginBottom: '2rem', color: '#fff' }}>Let's Create Something Amazing</h2>
-        <div className="social-links">
+        <div className="contact-container">
+          <div className="contact-header">
+            <h2>Let's Work Together</h2>
+            <p>Have a project in mind or just want to say hi? I'm currently open for new opportunities.</p>
+          </div>
+          
+          <form action="https://formsubmit.co/sohamvora0207@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New message from portfolio!" />
+            <input type="hidden" name="_captcha" value="false" />
+            
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="info@example.com" required />
+              </div>
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            
+            <motion.button 
+              type="submit" 
+              className="submit-btn"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Send Message
+            </motion.button>
+          </form>
+        </div>
+
+        <div className="contact-divider">Or connect with me directly</div>
+
+        <div className="social-icons-wrapper">
           {[
-            { id: 'Linkedin', href: 'https://www.linkedin.com/in/soham-vora-7209b732b' },
-            { id: 'Github', href: 'https://github.com/Soham-0207' },
-            { id: 'Mail', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=sohamvora0207@gmail.com' }
+            { id: 'Github', href: 'https://github.com/Soham-0207', label: 'GitHub' },
+            { id: 'Linkedin', href: 'https://www.linkedin.com/in/soham-vora-7209b732b', label: 'LinkedIn' },
+            { id: 'X', href: 'https://twitter.com', label: 'X' },
+            { id: 'Mail', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=sohamvora0207@gmail.com', label: 'Mail' }
           ].map((item, idx) => {
-            const Icon = item.id === 'Linkedin' ? LinkedinIcon : item.id === 'Github' ? GithubIcon : Mail;
+            const Icon = item.id === 'Linkedin' ? LinkedinIcon : item.id === 'Github' ? GithubIcon : item.id === 'X' ? ({size}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg> : Mail;
             const isMail = item.id === 'Mail';
             return (
               <motion.a 
                 key={idx} 
                 href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, y: -5, color: "var(--accent-cyan)", filter: "drop-shadow(0px 0px 8px rgba(0,240,255,0.8))" }}
-                whileTap={{ scale: 0.9 }}
+                target={isMail ? undefined : "_blank"}
+                rel={isMail ? undefined : "noopener noreferrer"}
+                className="social-icon-btn"
+                whileHover={{ y: -5 }}
               >
-                <Icon size={24} />
+                <div className="social-icon-circle">
+                  <Icon size={20} />
+                </div>
+                <span>{item.label}</span>
               </motion.a>
             )
           })}
         </div>
-        <p className="mono" style={{ fontSize: '0.9rem' }}>
+        
+        <p className="mono" style={{ fontSize: '0.9rem', marginTop: '2rem' }}>
           &copy; {new Date().getFullYear()} Soham Vora. Engineered with passion.
         </p>
       </motion.footer>
