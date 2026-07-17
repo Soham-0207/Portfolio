@@ -314,7 +314,7 @@ function App() {
         viewport={{ once: true, amount: 0.2 }}
         variants={fadeInUp}
       >
-        <div className="contact-container">
+        <div className="contact-container glass-panel">
           <div className="contact-header">
             <h2>Let's Work Together</h2>
             <p>Have a project in mind or just want to say hi? I'm currently open for new opportunities.</p>
