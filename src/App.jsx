@@ -337,7 +337,7 @@ function App() {
             
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+              <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
             </div>
             
             <motion.button 
