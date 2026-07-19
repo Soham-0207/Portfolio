@@ -249,29 +249,13 @@ a {
   cursor: none !important; /* Hide default cursor everywhere */
 }
 
-.cursor-dot {
+.comet-dot {
   position: fixed;
   top: 0;
   left: 0;
-  width: 8px;
-  height: 8px;
   border-radius: 50%;
-  background-color: var(--accent-cyan);
   pointer-events: none;
   z-index: 9999;
   box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-}
-
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 2px solid var(--accent-cyan);
-  pointer-events: none;
-  z-index: 9998;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
