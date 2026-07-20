@@ -1,0 +1,64 @@
+.synthwave-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background: linear-gradient(to bottom, #020108 0%, #0a0319 50%, #290849 70%, #ff0055 100%);
+  overflow: hidden;
+  perspective: 800px;
+  pointer-events: none;
+}
+
+.synthwave-sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(to bottom, #ffd700, #ff0055);
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(255, 0, 85, 0.6), 0 0 100px rgba(255, 215, 0, 0.4);
+  z-index: 1;
+  -webkit-mask-image: repeating-linear-gradient(to bottom, black 0%, black 60%, transparent 60%, transparent 100%);
+  -webkit-mask-size: 100% 16px;
+  mask-image: repeating-linear-gradient(to bottom, black 0%, black 60%, transparent 60%, transparent 100%);
+  mask-size: 100% 16px;
+}
+
+.synthwave-grid {
+  position: absolute;
+  bottom: -40%;
+  left: -50%;
+  width: 200%;
+  height: 120%;
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.9) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.9) 2px, transparent 2px);
+  background-size: 80px 80px;
+  transform-origin: top center;
+  transform: rotateX(80deg);
+  animation: gridMove 1.5s linear infinite;
+  z-index: 2;
+  /* Create a fade out effect towards the horizon */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+}
+
+.synthwave-horizon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #00f0ff;
+  box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+  z-index: 3;
+}
+
+@keyframes gridMove {
+  0% { transform: rotateX(80deg) translateY(0); }
+  100% { transform: rotateX(80deg) translateY(80px); }
+}
