@@ -3,7 +3,6 @@ import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camer
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { motion } from 'framer-motion';
 import CustomCursor from './CustomCursor';
-import ParticlesBackground from './ParticlesBackground';
 import './Contact.css';
 import heroImg from './assets/hero.jpeg';
 import './App.css';
@@ -40,7 +39,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <ParticlesBackground />
+      <div className="dynamic-gradient-bg" />
       <CustomCursor />
       <nav className="navbar">
         <motion.div 
