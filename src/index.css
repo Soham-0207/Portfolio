@@ -454,22 +454,37 @@ a {
   box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
 }
 
-.dynamic-gradient-bg {
+.spotlight-bg {
   position: fixed;
-  top: -5%;
-  left: -5%;
-  width: 110vw;
-  height: 110vh;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: -2;
-  background-image: url('/bg.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation: dynamicPan 25s ease-in-out infinite alternate;
+  background-color: #040406;
+  pointer-events: none;
 }
 
-@keyframes dynamicPan {
-  0% { transform: scale(1) translate(0, 0); }
-  50% { transform: scale(1.08) translate(-1.5%, -1.5%); }
-  100% { transform: scale(1) translate(1.5%, 1.5%); }
+.spotlight-texture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+  opacity: 1;
+  mask-image: radial-gradient(
+    circle 450px at var(--mouse-x) var(--mouse-y),
+    rgba(0, 0, 0, 1) 0%,
+    transparent 80%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle 450px at var(--mouse-x) var(--mouse-y),
+    rgba(0, 0, 0, 1) 0%,
+    transparent 80%
+  );
 }

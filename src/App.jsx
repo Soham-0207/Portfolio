@@ -3,9 +3,15 @@ import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camer
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { motion } from 'framer-motion';
 import CustomCursor from './CustomCursor';
+import SpotlightBackground from './SpotlightBackground';
 import './Contact.css';
 import heroImg from './assets/hero.jpeg';
 import './App.css';
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
 
 function App() {
   const [typedText, setTypedText] = useState('');
@@ -24,11 +30,6 @@ function App() {
     return () => clearInterval(typingInterval);
   }, []);
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-  };
-
   const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
@@ -39,7 +40,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="dynamic-gradient-bg" />
+      <SpotlightBackground />
       <CustomCursor />
       <nav className="navbar">
         <motion.div 
