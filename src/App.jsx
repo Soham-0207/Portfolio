@@ -3,7 +3,7 @@ import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camer
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { motion } from 'framer-motion';
 import CustomCursor from './CustomCursor';
-import TunnelBackground from './TunnelBackground';
+import ConstellationBackground from './ConstellationBackground';
 import './Contact.css';
 import heroImg from './assets/hero.jpeg';
 import './App.css';
@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <TunnelBackground />
+      <ConstellationBackground />
       <CustomCursor />
       <nav className="navbar">
         <motion.div 
