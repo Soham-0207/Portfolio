@@ -3,7 +3,7 @@ import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camer
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { motion } from 'framer-motion';
 import CustomCursor from './CustomCursor';
-import HexagonBackground from './HexagonBackground';
+import CyberpunkBackground from './CyberpunkBackground';
 import './Contact.css';
 import heroImg from './assets/hero.jpeg';
 import './App.css';
@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <HexagonBackground />
+      <CyberpunkBackground />
       <CustomCursor />
       <nav className="navbar">
         <motion.div 
