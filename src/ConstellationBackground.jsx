@@ -79,8 +79,8 @@ export default function ConstellationBackground() {
           
           if (dist < 100) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(0, 240, 255, ${0.4 * (1 - dist / 100)})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(0, 240, 255, ${0.8 * (1 - dist / 100)})`;
+            ctx.lineWidth = 1.5;
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.stroke();
@@ -95,8 +95,8 @@ export default function ConstellationBackground() {
           
           if (dist < 160) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(189, 0, 255, ${0.6 * (1 - dist / 160)})`; // Purple connection
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = `rgba(189, 0, 255, ${1.0 * (1 - dist / 160)})`; // Purple connection
+            ctx.lineWidth = 2.5;
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(mouse.x, mouse.y);
             ctx.stroke();
