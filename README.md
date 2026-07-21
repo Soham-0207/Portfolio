@@ -36,6 +36,15 @@ Welcome to my personal portfolio! I am a B.Tech student with a dual passion for 
 
 ---
 
+## 🎯 2026 Goals & Current Focus
+
+- **Building:** Expanding NovaTix into a robust microservices architecture and optimizing its backend for high concurrency.
+- **Learning:** Advanced System Design, distributed systems, and mastering cloud infrastructure (AWS) for scalable deployments.
+- **Exploring:** The intersection of AI and modern web applications (AI Agents, LLMs) and deep diving into WebGL for immersive 3D experiences.
+- **Achieving:** Evolving into a highly proficient Full-Stack Engineer capable of architecting complex systems from scratch, while making meaningful contributions to the open-source community.
+
+---
+
 ## 💻 Tech Stack
 
 **Frontend Architecture**
