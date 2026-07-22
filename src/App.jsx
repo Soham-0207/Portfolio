@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camera } from 'lucide-react';
+import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camera, FileText } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { motion } from 'framer-motion';
 import CustomCursor from './CustomCursor';
@@ -111,6 +111,7 @@ function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 0.5 }}
+              style={{ flexWrap: 'wrap' }}
             >
               <motion.a 
                 href="#projects" 
@@ -119,6 +120,17 @@ function App() {
                 whileTap={{ scale: 0.95 }}
               >
                 View Projects
+              </motion.a>
+              <motion.a 
+                href="/Soham_Vora_Resume.pdf" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+                whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(255, 255, 255, 0.3)" }}
+                whileTap={{ scale: 0.95 }}
+                style={{ background: 'rgba(255,255,255,0.05)', color: 'var(--text-main)', border: '1px solid rgba(255,255,255,0.2)' }}
+              >
+                <FileText size={18} style={{ marginRight: '8px', display: 'inline-block', verticalAlign: 'text-bottom' }} /> Resume
               </motion.a>
               <motion.a 
                 href="#contact" 
