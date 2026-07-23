@@ -127,30 +127,22 @@
   top: 10%;
   left: -5%;
   color: #fff;
-  animation: spinShadowCyan 4s linear infinite;
+  animation: spinShadowIcon 8s linear infinite;
 }
 
 .icon-purple {
   bottom: 15%;
   right: -5%;
   color: #fff;
-  animation: spinShadowPurple 4.5s linear infinite;
+  animation: spinShadowIcon 8s linear infinite;
 }
 
-@keyframes spinShadowCyan {
+@keyframes spinShadowIcon {
   0%   { box-shadow: -5px -5px 15px rgba(0, 240, 255, 0.4), 5px 5px 15px rgba(189, 0, 255, 0.4); }
   25%  { box-shadow: 5px -5px 15px rgba(0, 240, 255, 0.4), -5px 5px 15px rgba(189, 0, 255, 0.4); }
   50%  { box-shadow: 5px 5px 15px rgba(0, 240, 255, 0.4), -5px -5px 15px rgba(189, 0, 255, 0.4); }
   75%  { box-shadow: -5px 5px 15px rgba(0, 240, 255, 0.4), 5px -5px 15px rgba(189, 0, 255, 0.4); }
   100% { box-shadow: -5px -5px 15px rgba(0, 240, 255, 0.4), 5px 5px 15px rgba(189, 0, 255, 0.4); }
-}
-
-@keyframes spinShadowPurple {
-  0%   { box-shadow: -5px -5px 15px rgba(189, 0, 255, 0.4), 5px 5px 15px rgba(0, 240, 255, 0.4); }
-  25%  { box-shadow: -5px 5px 15px rgba(189, 0, 255, 0.4), 5px -5px 15px rgba(0, 240, 255, 0.4); }
-  50%  { box-shadow: 5px 5px 15px rgba(189, 0, 255, 0.4), -5px -5px 15px rgba(0, 240, 255, 0.4); }
-  75%  { box-shadow: 5px -5px 15px rgba(189, 0, 255, 0.4), -5px 5px 15px rgba(0, 240, 255, 0.4); }
-  100% { box-shadow: -5px -5px 15px rgba(189, 0, 255, 0.4), 5px 5px 15px rgba(0, 240, 255, 0.4); }
 }
 .hero-subtitle {
   font-size: 1rem;
