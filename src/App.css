@@ -127,8 +127,9 @@
 .icon-cyan {
   top: 10%;
   left: -5%;
-  color: var(--accent-cyan);
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+  color: #fff;
+  box-shadow: -5px -5px 15px rgba(0, 240, 255, 0.4), 5px 5px 15px rgba(189, 0, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .icon-purple {
