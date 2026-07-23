@@ -87,21 +87,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: spinShadowHero 8s linear infinite;
 }
 
-.hero-image-wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: 50%;
-  box-shadow: -15px -15px 40px rgba(0, 240, 255, 0.3), 15px 15px 40px rgba(189, 0, 255, 0.3);
-  z-index: 0;
-  animation: spinGlow 8s linear infinite;
-}
-
-@keyframes spinGlow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes spinShadowHero {
+  0%   { box-shadow: -15px -15px 40px rgba(0, 240, 255, 0.3), 15px 15px 40px rgba(189, 0, 255, 0.3); }
+  25%  { box-shadow: 15px -15px 40px rgba(0, 240, 255, 0.3), -15px 15px 40px rgba(189, 0, 255, 0.3); }
+  50%  { box-shadow: 15px 15px 40px rgba(0, 240, 255, 0.3), -15px -15px 40px rgba(189, 0, 255, 0.3); }
+  75%  { box-shadow: -15px 15px 40px rgba(0, 240, 255, 0.3), 15px -15px 40px rgba(189, 0, 255, 0.3); }
+  100% { box-shadow: -15px -15px 40px rgba(0, 240, 255, 0.3), 15px 15px 40px rgba(189, 0, 255, 0.3); }
 }
 
 .hero-img {
@@ -133,30 +127,30 @@
   top: 10%;
   left: -5%;
   color: #fff;
-}
-.icon-cyan::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: inherit;
-  box-shadow: -5px -5px 15px rgba(0, 240, 255, 0.4), 5px 5px 15px rgba(189, 0, 255, 0.4);
-  z-index: -1;
-  animation: spinGlow 4s linear infinite;
+  animation: spinShadowCyan 4s linear infinite;
 }
 
 .icon-purple {
   bottom: 15%;
   right: -5%;
   color: #fff;
+  animation: spinShadowPurple 4.5s linear infinite;
 }
-.icon-purple::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: inherit;
-  box-shadow: -5px -5px 15px rgba(189, 0, 255, 0.4), 5px 5px 15px rgba(0, 240, 255, 0.4);
-  z-index: -1;
-  animation: spinGlow 4.5s linear infinite reverse;
+
+@keyframes spinShadowCyan {
+  0%   { box-shadow: -5px -5px 15px rgba(0, 240, 255, 0.4), 5px 5px 15px rgba(189, 0, 255, 0.4); }
+  25%  { box-shadow: 5px -5px 15px rgba(0, 240, 255, 0.4), -5px 5px 15px rgba(189, 0, 255, 0.4); }
+  50%  { box-shadow: 5px 5px 15px rgba(0, 240, 255, 0.4), -5px -5px 15px rgba(189, 0, 255, 0.4); }
+  75%  { box-shadow: -5px 5px 15px rgba(0, 240, 255, 0.4), 5px -5px 15px rgba(189, 0, 255, 0.4); }
+  100% { box-shadow: -5px -5px 15px rgba(0, 240, 255, 0.4), 5px 5px 15px rgba(189, 0, 255, 0.4); }
+}
+
+@keyframes spinShadowPurple {
+  0%   { box-shadow: -5px -5px 15px rgba(189, 0, 255, 0.4), 5px 5px 15px rgba(0, 240, 255, 0.4); }
+  25%  { box-shadow: -5px 5px 15px rgba(189, 0, 255, 0.4), 5px -5px 15px rgba(0, 240, 255, 0.4); }
+  50%  { box-shadow: 5px 5px 15px rgba(189, 0, 255, 0.4), -5px -5px 15px rgba(0, 240, 255, 0.4); }
+  75%  { box-shadow: 5px -5px 15px rgba(189, 0, 255, 0.4), -5px 5px 15px rgba(0, 240, 255, 0.4); }
+  100% { box-shadow: -5px -5px 15px rgba(189, 0, 255, 0.4), 5px 5px 15px rgba(0, 240, 255, 0.4); }
 }
 .hero-subtitle {
   font-size: 1rem;
