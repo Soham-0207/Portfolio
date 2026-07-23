@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Lenis from 'lenis';
 import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camera, FileText } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { motion } from 'framer-motion';
@@ -7,10 +8,23 @@ import ConstellationBackground from './ConstellationBackground';
 import './Contact.css';
 import heroImg from './assets/hero.jpeg';
 import './App.css';
+import 'lenis/dist/lenis.css';
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  hidden: { opacity: 0, y: 50, scale: 0.9, rotateX: -15 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1, 
+    rotateX: 0,
+    transition: { 
+      duration: 0.8, 
+      ease: [0.25, 0.1, 0.25, 1],
+      type: "spring",
+      stiffness: 100,
+      damping: 15
+    } 
+  }
 };
 
 function App() {
@@ -18,6 +32,26 @@ function App() {
   const fullText = "Software Engineer";
   
   useEffect(() => {
+    // Initialize smooth scrolling
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Typewriter effect
     let i = 0;
     const typingInterval = setInterval(() => {
       if (i < fullText.length) {
@@ -27,7 +61,11 @@ function App() {
         clearInterval(typingInterval);
       }
     }, 100);
-    return () => clearInterval(typingInterval);
+
+    return () => {
+      clearInterval(typingInterval);
+      lenis.destroy();
+    };
   }, []);
 
   const staggerContainer = {
