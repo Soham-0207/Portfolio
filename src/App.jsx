@@ -160,6 +160,13 @@ function App() {
                 <Code2 size={24} />
               </motion.div>
               
+              <motion.div 
+                className="floating-icon icon-purple"
+                animate={{ y: [0, 15, 0], rotate: [0, -10, 10, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              >
+                <Terminal size={24} />
+              </motion.div>
 
             </div>
           </motion.div>
