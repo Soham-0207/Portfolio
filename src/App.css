@@ -94,8 +94,7 @@
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.4), rgba(189, 0, 255, 0.4));
-  box-shadow: -15px -15px 40px rgba(0, 240, 255, 0.3), 15px 15px 40px rgba(189, 0, 255, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.05);
+  box-shadow: -15px -15px 40px rgba(0, 240, 255, 0.3), 15px 15px 40px rgba(189, 0, 255, 0.3);
   z-index: 0;
   animation: spinGlow 8s linear infinite;
 }
@@ -103,15 +102,6 @@
 @keyframes spinGlow {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-.hero-image-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 10px; left: 10px; right: 10px; bottom: 10px;
-  border-radius: 50%;
-  background: var(--bg-main);
-  z-index: 1;
 }
 
 .hero-img {
@@ -143,16 +133,30 @@
   top: 10%;
   left: -5%;
   color: #fff;
+}
+.icon-cyan::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
   box-shadow: -5px -5px 15px rgba(0, 240, 255, 0.4), 5px 5px 15px rgba(189, 0, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: -1;
+  animation: spinGlow 4s linear infinite;
 }
 
 .icon-purple {
   bottom: 15%;
   right: -5%;
   color: #fff;
-  box-shadow: -5px -5px 15px rgba(0, 240, 255, 0.4), 5px 5px 15px rgba(189, 0, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.icon-purple::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  box-shadow: -5px -5px 15px rgba(189, 0, 255, 0.4), 5px 5px 15px rgba(0, 240, 255, 0.4);
+  z-index: -1;
+  animation: spinGlow 4.5s linear infinite reverse;
 }
 .hero-subtitle {
   font-size: 1rem;
