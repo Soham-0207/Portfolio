@@ -126,9 +126,9 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn"
-                whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(0, 240, 255, 0.4)" }}
+                whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(255, 255, 255, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
-                style={{ background: 'transparent', color: '#00f0ff', border: '1px solid rgba(0, 240, 255, 0.5)' }}
+                style={{ background: 'rgba(255, 255, 255, 0.05)', color: 'white', border: '1px solid rgba(255, 255, 255, 0.5)' }}
               >
                 <FileText size={18} style={{ marginRight: '8px', display: 'inline-block', verticalAlign: 'text-bottom' }} /> Resume
               </motion.a>
