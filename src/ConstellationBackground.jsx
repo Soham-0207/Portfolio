@@ -134,10 +134,10 @@ export default function ConstellationBackground() {
       ref={canvasRef}
       style={{
         position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
+        top: '-25vh',
+        left: '-25vw',
+        width: '150vw',
+        height: '150vh',
         zIndex: -2,
         pointerEvents: 'none'
       }}

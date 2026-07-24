@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Lenis from 'lenis';
 import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camera, FileText } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import CustomCursor from './CustomCursor';
 import ConstellationBackground from './ConstellationBackground';
 import './Contact.css';
@@ -68,6 +68,13 @@ function App() {
     };
   }, []);
 
+  const { scrollY } = useScroll();
+  
+  // Parallax calculations
+  const backgroundY = useTransform(scrollY, [0, 4000], [0, 600]);
+  const gridY = useTransform(scrollY, [0, 4000], [0, 1500]);
+  const foregroundY = useTransform(scrollY, [0, 4000], [0, -1000]);
+
   const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
@@ -78,7 +85,9 @@ function App() {
 
   return (
     <div className="app-container">
-      <ConstellationBackground />
+      <motion.div style={{ y: backgroundY }}>
+        <ConstellationBackground />
+      </motion.div>
       <CustomCursor />
       <nav className="navbar">
         <motion.div 
@@ -110,7 +119,7 @@ function App() {
       </nav>
 
       <section className="hero">
-        <div className="hero-bg"></div>
+        <motion.div className="hero-bg" style={{ y: gridY }}></motion.div>
         <div className="hero-content">
           <div className="hero-text-side">
             <motion.div 
@@ -183,6 +192,7 @@ function App() {
 
           <motion.div 
             className="hero-image-side"
+            style={{ y: foregroundY }}
             initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1, type: "spring", stiffness: 80, delay: 0.2 }}
