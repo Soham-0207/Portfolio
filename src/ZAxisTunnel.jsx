@@ -11,17 +11,41 @@ function TunnelSection({ index, count, scrollYProgress, children }) {
   const fadeDown = peak + (step * 0.5);
   const end = peak + step;
   
-  const scale = useTransform(
-    scrollYProgress, 
-    [start, peak, end], 
-    [0.1, 1, 10]
-  );
+  const rawScaleInput = [start, peak, end];
+  const rawScaleOutput = [0.1, 1, 10];
   
-  const opacity = useTransform(
-    scrollYProgress,
-    [start, fadeUp, peak, fadeDown, end],
-    [0, 1, 1, 0, 0]
-  );
+  const scaleInput = [];
+  const scaleOutput = [];
+  rawScaleInput.forEach((val, i) => {
+    if (val >= 0 && val <= 1) {
+      scaleInput.push(val);
+      scaleOutput.push(rawScaleOutput[i]);
+    }
+  });
+
+  const rawOpacityInput = [start, fadeUp, peak, fadeDown, end];
+  const rawOpacityOutput = [0, 1, 1, 0, 0];
+  
+  const opacityInput = [];
+  const opacityOutput = [];
+  rawOpacityInput.forEach((val, i) => {
+    if (val >= 0 && val <= 1) {
+      opacityInput.push(val);
+      opacityOutput.push(rawOpacityOutput[i]);
+    }
+  });
+
+  if (scaleInput.length === 1) {
+    if (scaleInput[0] === 0) { scaleInput.push(1); scaleOutput.push(scaleOutput[0]); }
+    else { scaleInput.unshift(0); scaleOutput.unshift(scaleOutput[0]); }
+  }
+  if (opacityInput.length === 1) {
+    if (opacityInput[0] === 0) { opacityInput.push(1); opacityOutput.push(opacityOutput[0]); }
+    else { opacityInput.unshift(0); opacityOutput.unshift(opacityOutput[0]); }
+  }
+  
+  const scale = useTransform(scrollYProgress, scaleInput, scaleOutput);
+  const opacity = useTransform(scrollYProgress, opacityInput, opacityOutput);
 
 
 
