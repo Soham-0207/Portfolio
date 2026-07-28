@@ -3,9 +3,13 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 function TunnelSection({ index, count, scrollYProgress, children }) {
   // Calculate the start, peak, and end for this section based on the total scroll height
-  const start = (index - 1) / count;
   const peak = index / count;
-  const end = (index + 1) / count;
+  const step = 1 / count;
+  
+  const start = peak - step;
+  const fadeUp = peak - (step * 0.5);
+  const fadeDown = peak + (step * 0.5);
+  const end = peak + step;
   
   const scale = useTransform(
     scrollYProgress, 
@@ -15,7 +19,7 @@ function TunnelSection({ index, count, scrollYProgress, children }) {
   
   const opacity = useTransform(
     scrollYProgress,
-    [start, peak - 0.1, peak, peak + 0.1, end],
+    [start, fadeUp, peak, fadeDown, end],
     [0, 1, 1, 0, 0]
   );
 
@@ -42,7 +46,7 @@ function TunnelSection({ index, count, scrollYProgress, children }) {
 export default function ZAxisTunnel({ children }) {
   const { scrollYProgress } = useScroll(); // 0 to 1
 
-  const sections = React.Children.toArray(children).filter(Boolean);
+  const sections = React.Children.toArray(children).filter(child => React.isValidElement(child));
   const count = sections.length;
 
   return (
