@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Lenis from 'lenis';
 import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camera, FileText } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { motion } from 'framer-motion';
@@ -33,25 +32,6 @@ function App() {
   const fullText = "Software Engineer";
   
   useEffect(() => {
-    // Initialize smooth scrolling
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
     // Typewriter effect
     let i = 0;
     const typingInterval = setInterval(() => {
@@ -65,7 +45,6 @@ function App() {
 
     return () => {
       clearInterval(typingInterval);
-      lenis.destroy();
     };
   }, []);
 
@@ -214,22 +193,17 @@ function App() {
         </div>
       </section>
 
-      <motion.section 
+      <section 
         id="about" 
         className="section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={staggerContainer}
       >
-        <motion.h2 variants={fadeInUp} className="section-header">
+        <h2 className="section-header">
           <Code2 size={32} /> About Me
-        </motion.h2>
+        </h2>
         
         <div className="about-bento-grid">
           <motion.div 
             className="glass-panel bento-card bio-card"
-            variants={fadeInUp}
             whileHover={{ y: -5, boxShadow: "0px 15px 35px rgba(0,0,0,0.4)" }}
           >
             <span className="highlight text-gradient">
@@ -245,7 +219,6 @@ function App() {
 
           <motion.div 
             className="glass-panel bento-card dev-card"
-            variants={fadeInUp}
             whileHover={{ x: -5, boxShadow: "-10px 10px 30px rgba(0,240,255,0.1)", borderColor: "var(--accent-cyan)" }}
           >
             <h3><Terminal size={24} className="glow-cyan" /> Logic & Engineering</h3>
@@ -256,22 +229,17 @@ function App() {
 
 
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section 
+      <section 
         id="skills" 
         className="section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={staggerContainer}
       >
-        <motion.h2 variants={fadeInUp} className="section-header">
+        <h2 className="section-header">
           <Terminal size={32} /> Technical Arsenal
         </motion.h2>
         <div className="skills-grid">
           <motion.div 
-            variants={fadeInUp}
             className="glass-panel" 
             style={{ padding: '2rem' }}
             whileHover={{ scale: 1.02 }}
@@ -299,23 +267,18 @@ function App() {
 
 
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section 
+      <section 
         id="projects" 
         className="section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={staggerContainer}
       >
-        <motion.h2 variants={fadeInUp} className="section-header">
+        <h2 className="section-header">
           <MonitorPlay size={32} /> Featured Work
         </motion.h2>
         <div className="projects-grid">
           {/* Software Project */}
           <motion.div 
-            variants={fadeInUp}
             className="glass-panel project-card" 
             style={{ borderTop: '4px solid var(--accent-cyan)' }}
             whileHover={{ y: -10, boxShadow: "0px 20px 30px rgba(0,0,0,0.5), 0px 0px 15px rgba(0,240,255,0.1)" }}
@@ -341,7 +304,6 @@ function App() {
 
           {/* Placeholder for future coding project */}
           <motion.div 
-            variants={fadeInUp}
             className="glass-panel project-card" 
             style={{ borderTop: '4px solid var(--accent-cyan)', opacity: 0.7 }}
             whileHover={{ y: -10, opacity: 1, boxShadow: "0px 20px 30px rgba(0,0,0,0.5), 0px 0px 15px rgba(0,240,255,0.1)" }}
@@ -365,15 +327,11 @@ function App() {
 
 
         </div>
-      </motion.section>
+      </section>
 
-      <motion.footer 
+      <footer 
         id="contact" 
         className="footer"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={fadeInUp}
       >
         <div className="contact-container glass-panel">
           <div className="contact-header">

@@ -23,7 +23,7 @@ function TunnelSection({ index, count, scrollYProgress, children }) {
     [0, 1, 1, 0, 0]
   );
 
-  const pointerEvents = useTransform(opacity, v => v > 0.5 ? 'auto' : 'none');
+
 
   return (
     <motion.div
@@ -34,8 +34,7 @@ function TunnelSection({ index, count, scrollYProgress, children }) {
         alignItems: 'center',
         justifyContent: 'center',
         scale,
-        opacity,
-        pointerEvents
+        opacity
       }}
     >
       {children}
