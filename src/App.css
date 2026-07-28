@@ -209,6 +209,7 @@
 /* Sections General */
 .section {
   padding: 8rem 10%;
+  width: 100%;
 }
 .section-header {
   font-size: 2.5rem;
