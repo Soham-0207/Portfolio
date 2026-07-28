@@ -8,6 +8,46 @@
     <title>Soham Vora | Portfolio</title>
   </head>
   <body>
+    <script>
+      window.addEventListener('error', function(event) {
+        var errorDiv = document.createElement('div');
+        errorDiv.style.position = 'fixed';
+        errorDiv.style.top = '0';
+        errorDiv.style.left = '0';
+        errorDiv.style.width = '100vw';
+        errorDiv.style.height = '100vh';
+        errorDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.9)';
+        errorDiv.style.color = 'white';
+        errorDiv.style.zIndex = '99999';
+        errorDiv.style.padding = '20px';
+        errorDiv.style.fontFamily = 'monospace';
+        errorDiv.style.whiteSpace = 'pre-wrap';
+        errorDiv.style.overflow = 'auto';
+        errorDiv.innerHTML = '<h2>JavaScript Error Caught</h2>' + 
+                             '<p><strong>Message:</strong> ' + event.message + '</p>' + 
+                             '<p><strong>Source:</strong> ' + event.filename + ':' + event.lineno + ':' + event.colno + '</p>' +
+                             '<p><strong>Error Object:</strong> ' + (event.error ? event.error.stack : 'N/A') + '</p>';
+        document.body.appendChild(errorDiv);
+      });
+      window.addEventListener('unhandledrejection', function(event) {
+        var errorDiv = document.createElement('div');
+        errorDiv.style.position = 'fixed';
+        errorDiv.style.top = '0';
+        errorDiv.style.left = '0';
+        errorDiv.style.width = '100vw';
+        errorDiv.style.height = '100vh';
+        errorDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.9)';
+        errorDiv.style.color = 'white';
+        errorDiv.style.zIndex = '99999';
+        errorDiv.style.padding = '20px';
+        errorDiv.style.fontFamily = 'monospace';
+        errorDiv.style.whiteSpace = 'pre-wrap';
+        errorDiv.style.overflow = 'auto';
+        errorDiv.innerHTML = '<h2>Unhandled Promise Rejection Caught</h2>' + 
+                             '<p><strong>Reason:</strong> ' + (event.reason && event.reason.stack ? event.reason.stack : event.reason) + '</p>';
+        document.body.appendChild(errorDiv);
+      });
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
