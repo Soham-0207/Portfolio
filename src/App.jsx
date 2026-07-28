@@ -5,6 +5,7 @@ import { GithubIcon, LinkedinIcon } from './Icons';
 import { motion } from 'framer-motion';
 import CustomCursor from './CustomCursor';
 import ConstellationBackground from './ConstellationBackground';
+import ZAxisTunnel from './ZAxisTunnel';
 import './Contact.css';
 import heroImg from './assets/hero.jpeg';
 import './App.css';
@@ -109,6 +110,7 @@ function App() {
         </motion.div>
       </nav>
 
+      <ZAxisTunnel>
       <section className="hero">
         <div className="hero-bg"></div>
         <div className="hero-content">
@@ -442,6 +444,7 @@ function App() {
           &copy; {new Date().getFullYear()} Soham Vora. Engineered with passion.
         </p>
       </motion.footer>
+      </ZAxisTunnel>
     </div>
   );
 }
