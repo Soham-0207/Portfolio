@@ -237,7 +237,7 @@ function App() {
       >
         <h2 className="section-header">
           <Terminal size={32} /> Technical Arsenal
-        </motion.h2>
+        </h2>
         <div className="skills-grid">
           <motion.div 
             className="glass-panel" 
@@ -275,7 +275,7 @@ function App() {
       >
         <h2 className="section-header">
           <MonitorPlay size={32} /> Featured Work
-        </motion.h2>
+        </h2>
         <div className="projects-grid">
           {/* Software Project */}
           <motion.div 
@@ -401,7 +401,7 @@ function App() {
         <p className="mono" style={{ fontSize: '0.9rem', marginTop: '2rem' }}>
           &copy; {new Date().getFullYear()} Soham Vora. Engineered with passion.
         </p>
-      </motion.footer>
+      </footer>
       </ZAxisTunnel>
     </div>
   );
