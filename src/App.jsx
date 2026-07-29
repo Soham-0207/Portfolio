@@ -48,6 +48,25 @@ function App() {
     };
   }, []);
 
+  const handleScrollTo = (e, id) => {
+    e.preventDefault();
+    const sectionIndex = {
+      'home': 0,
+      'about': 1,
+      'skills': 2,
+      'projects': 3,
+      'contact': 4
+    }[id];
+    
+    if (sectionIndex !== undefined) {
+      const count = 5;
+      const peak = sectionIndex / count;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      window.scrollTo({ top: peak * maxScroll, behavior: 'smooth' });
+    }
+  };
+
+
   const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
@@ -80,6 +99,7 @@ function App() {
             <motion.a 
               key={item} 
               href={`#${item.toLowerCase()}`}
+              onClick={(e) => handleScrollTo(e, item.toLowerCase())}
               whileHover={{ scale: 1.1, color: "var(--accent-cyan)" }}
               whileTap={{ scale: 0.95 }}
             >
@@ -134,6 +154,7 @@ function App() {
             >
               <motion.a 
                 href="#projects" 
+                onClick={(e) => handleScrollTo(e, 'projects')}
                 className="btn btn-primary"
                 whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(0, 240, 255, 0.6)" }}
                 whileTap={{ scale: 0.95 }}
@@ -153,6 +174,7 @@ function App() {
               </motion.a>
               <motion.a 
                 href="#contact" 
+                onClick={(e) => handleScrollTo(e, 'contact')}
                 className="btn btn-secondary"
                 whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(189, 0, 255, 0.6)" }}
                 whileTap={{ scale: 0.95 }}
