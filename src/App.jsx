@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Terminal, Film, Code2, Scissors, MonitorPlay, ExternalLink, Mail, Camera, FileText } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import CustomCursor from './CustomCursor';
 import ConstellationBackground from './ConstellationBackground';
 import ZAxisTunnel from './ZAxisTunnel';
+import BootScreen from './BootScreen';
 import './Contact.css';
 import heroImg from './assets/hero.jpeg';
 import './App.css';
@@ -29,6 +30,7 @@ const fadeInUp = {
 
 function App() {
   const [typedText, setTypedText] = useState('');
+  const [booting, setBooting] = useState(true);
   const fullText = "Software Engineer";
   
   useEffect(() => {
@@ -77,6 +79,9 @@ function App() {
 
   return (
     <div className="app-container">
+      <AnimatePresence>
+        {booting && <BootScreen onComplete={() => setBooting(false)} />}
+      </AnimatePresence>
       <ConstellationBackground />
       <CustomCursor />
       <nav className="navbar">
