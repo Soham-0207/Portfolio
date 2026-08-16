@@ -329,28 +329,7 @@ function App() {
             </div>
           </motion.div>
 
-          {/* Placeholder for future coding project */}
-          <motion.div 
-            className="glass-panel project-card" 
-            style={{ borderTop: '4px solid var(--accent-cyan)', opacity: 0.7 }}
-            whileHover={{ y: -10, opacity: 1, boxShadow: "0px 20px 30px rgba(0,0,0,0.5), 0px 0px 15px rgba(0,240,255,0.1)" }}
-          >
-            <div className="project-type dev mono">Software Engineering</div>
-            <h3 className="project-title">Algorithm Visualizer</h3>
-            <p className="project-desc">
-              Interactive visualization tool for common sorting and pathfinding algorithms built with React and Canvas API.
-            </p>
-            <div>
-              <motion.a 
-                href="#" 
-                className="project-link"
-                whileHover={{ x: 5, color: "var(--accent-cyan)" }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Code2 size={16} /> View Source
-              </motion.a>
-            </div>
-          </motion.div>
+
 
 
         </div>
