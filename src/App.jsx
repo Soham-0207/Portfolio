@@ -76,7 +76,7 @@ function App() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/sohamvora0207@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/silentdevil1801@gmail.com", {
         method: "POST",
         headers: {
           'Accept': 'application/json'
@@ -417,7 +417,7 @@ function App() {
           {[
             { id: 'Github', href: 'https://github.com/Soham-0207', label: 'GitHub' },
             { id: 'Linkedin', href: 'https://www.linkedin.com/in/soham-vora-7209b732b', label: 'LinkedIn' },
-            { id: 'Mail', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=sohamvora0207@gmail.com', label: 'Mail' }
+            { id: 'Mail', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=silentdevil1801@gmail.com', label: 'Mail' }
           ].map((item, idx) => {
             const Icon = item.id === 'Linkedin' ? LinkedinIcon : item.id === 'Github' ? GithubIcon : Mail;
             const isMail = item.id === 'Mail';
