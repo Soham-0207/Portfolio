@@ -76,7 +76,7 @@ function App() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/silentdevil1801@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/ac5e62c417665891e26a7d76c8f74cf3", {
         method: "POST",
         headers: {
           'Accept': 'application/json'
