@@ -31,6 +31,7 @@ const fadeInUp = {
 function App() {
   const [typedText, setTypedText] = useState('');
   const [booting, setBooting] = useState(true);
+  const [formStatus, setFormStatus] = useState('');
   const fullText = "Software Engineer";
   
   useEffect(() => {
@@ -68,6 +69,31 @@ function App() {
     }
   };
 
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus('sending');
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/sohamvora0207@gmail.com", {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
+      
+      if (response.ok) {
+        setFormStatus('success');
+        form.reset();
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      setFormStatus('error');
+    }
+  };
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -345,33 +371,42 @@ function App() {
             <p>Have a project in mind or just want to say hi? I'm currently open for new opportunities.</p>
           </div>
           
-          <form action="https://formsubmit.co/sohamvora0207@gmail.com" method="POST">
+          <form onSubmit={handleFormSubmit}>
             <input type="hidden" name="_subject" value="New message from portfolio!" />
             <input type="hidden" name="_captcha" value="false" />
             
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="John Doe" required />
+                <input type="text" id="name" name="name" placeholder="John Doe" required disabled={formStatus === 'sending'} />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="info@example.com" required />
+                <input type="email" id="email" name="email" placeholder="info@example.com" required disabled={formStatus === 'sending'} />
               </div>
             </div>
             
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+              <textarea id="message" name="message" placeholder="Type your message here..." required disabled={formStatus === 'sending'}></textarea>
             </div>
             
             <motion.button 
               type="submit" 
               className="submit-btn"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              whileHover={formStatus === 'sending' ? {} : { scale: 1.02 }}
+              whileTap={formStatus === 'sending' ? {} : { scale: 0.98 }}
+              disabled={formStatus === 'sending'}
+              style={{
+                backgroundColor: formStatus === 'success' ? 'var(--accent-cyan)' : 
+                                 formStatus === 'error' ? '#ff3333' : 
+                                 'rgba(255, 255, 255, 0.1)'
+              }}
             >
-              Send Message
+              {formStatus === 'sending' ? 'Sending...' : 
+               formStatus === 'success' ? 'Message Sent!' : 
+               formStatus === 'error' ? 'Error. Try Again.' : 
+               'Send Message'}
             </motion.button>
           </form>
         </div>
